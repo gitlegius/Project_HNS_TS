@@ -272,7 +272,7 @@ while k_read < filesize %~feof(fid)
                                         
                                         if FullDatagram % Full IP packet
                                             
-                                            if ismember2_mex(uint32(PID_dec),uint32([400,401,402]),uint32(3)) %%%%%%%%%%%%%%%%%
+                                            if ismember2_mex(uint32(PID_dec),uint32([400,401,402,403]),uint32(4)) %%%%%%%%%%%%%%%%%
                                                 %                                         IP_packet_header = struct('Version',BinToDec_mex(logical(DatagramBytes(1:4)),false),'HdrLen',BinToDec_mex(logical(DatagramBytes(5:8)),false)*32,'TOS',DatagramBytes(9:16),'TotalLength',BinToDec_mex(logical(DatagramBytes(17:32)),false),'Identification',BinToDec_mex(logical(DatagramBytes(33:48)),false),'Flags',DatagramBytes(49:51),'FragmentOffset',DatagramBytes(52:64),'TimeToLive',DatagramBytes(65:72),'Protocol',DatagramBytes(73:80),'HeaderChecksum',DatagramBytes(81:96),'SourceIPAddress',DatagramBytes(97:128),'DestinationIPAddress',DatagramBytes(129:160),'Options',DatagramBytes(161:192));
                                                 [Version,HdrLen,TOS,TotalLength,Identification,Flags,FragmentOffset,TimeToLive,Protocol,HeaderChecksum,SourceIPAddress,DestinationIPAddress,Options] = IP_packet_header(DatagramBytes);
                                                 if Version~=4
